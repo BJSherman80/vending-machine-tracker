@@ -12,7 +12,6 @@ RSpec.describe 'When a user visits a vending machine show page', type: :feature 
     MachineSnack.create!(snack: soda_3, machine: dons)
 
     visit "/machines/#{dons.id}"
-    save_and_open_page
     expect(page).to have_content("#{soda_1.name}: #{soda_1.price}")
     expect(page).to have_content("#{soda_2.name}: #{soda_2.price}")
     expect(page).to have_content("#{soda_3.name}: #{soda_3.price}")
